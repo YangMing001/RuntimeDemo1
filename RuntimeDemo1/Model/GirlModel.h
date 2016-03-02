@@ -25,4 +25,7 @@
 
 - (instancetype)initWithDictionary: (NSDictionary *)data;
 
+- (void)displayCurrentModelProperty;
+
+
 @end

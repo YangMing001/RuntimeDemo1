@@ -23,11 +23,31 @@
     return self;
 }
 
+
+- (NSArray *)allPropertyNames{
+    unsigned int count ;
+    objc_property_t *propertyList = class_copyPropertyList([self class], &count);
+    NSMutableArray *propertyArray = [NSMutableArray array];
+    for (int i = 0; i < count; i++) {
+        objc_property_t property    = propertyList[i];
+        NSString *propertyName      = [NSString stringWithFormat:@"%s",property_getName(property)];
+        [propertyArray addObject:propertyName];
+    }
+    free(propertyList);
+    return propertyArray;
+}
+
+/**创建 setter 方法 返回setter方法*/
 - (SEL)createSetterWithPropertyName:(NSString *)propertyName{
     //首字母大写
-    NSString *tempPropertyName = propertyName.capitalizedString;
+    NSString *tempPropertyName  = propertyName.capitalizedString;
     tempPropertyName            = [NSString stringWithFormat:@"set%@:",tempPropertyName];
     return  NSSelectorFromString(tempPropertyName);
+}
+
+/**创建 Getter 方法 返回Getter方法*/
+- (SEL)createGetterWithPropertyName:(NSString *)propertyName{
+    return NSSelectorFromString(propertyName);
 }
 
 - (void)assginToPropertyWithDictionary:(NSDictionary *)data{
@@ -46,6 +66,30 @@
     }];
 }
 
+- (void)displayCurrentModelProperty{
+    NSArray *array = [self allPropertyNames];
+    NSMutableString *resultString = [[NSMutableString alloc] init];
+    
+    __weak typeof(self) weakSelf = self;
+    [array enumerateObjectsUsingBlock:^(NSString * _Nonnull propertyName, NSUInteger idx, BOOL * _Nonnull stop) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        SEL getSel = [strongSelf createGetterWithPropertyName:propertyName];
+        if ([self respondsToSelector:getSel]) {
+            NSMethodSignature *signature = [strongSelf methodSignatureForSelector:getSel];
+            
+            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+            
+            [invocation setTarget:strongSelf];
+            [invocation setSelector:getSel];
+            
+            NSObject *__unsafe_unretained returnValue = nil;
+            [invocation invoke];
+            [invocation getReturnValue:&returnValue];
+            [resultString appendFormat:@"%@\n",returnValue];
+        }
+    }];
+    NSLog(@"%@",resultString);
+}
 
 - (NSString *)description{
     /**利用runtime打印所有的属性名称和值*/
@@ -62,6 +106,7 @@
         
         descriptionString = [descriptionString stringByAppendingString:keyValueDic];
     }
+    free(propertyList);
     return descriptionString;
 }
 

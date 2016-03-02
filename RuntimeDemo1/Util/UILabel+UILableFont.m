@@ -47,8 +47,9 @@
     
     [self myWillMoveToSuperview:newSuperview];
     if (newSuperview) {
-        self.backgroundColor = [UIColor yellowColor];
-        [self setFont:[UIFont systemFontOfSize:13]];
+        self.backgroundColor = [UIColor blackColor];
+        self.textColor       = [UIColor whiteColor];
+        [self setFont:[UIFont systemFontOfSize:21]];
     }
 }
 

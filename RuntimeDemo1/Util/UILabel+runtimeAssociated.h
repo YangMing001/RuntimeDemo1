@@ -10,4 +10,6 @@
 
 @interface UILabel (runtimeAssociated)
 
+@property (nonatomic,strong) NSString* tjType;
+
 @end
