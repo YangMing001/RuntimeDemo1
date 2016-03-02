@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "RuntimeVC.h"
+
+#import "ThirdVC.h"
 #import <objc/runtime.h>
 
 #pragma mark -Calc
@@ -95,6 +98,23 @@ void minus(id self,SEL _cmd,NSNumber *val){
     l.frame = CGRectMake(90, 90, 40, 20);
     l.backgroundColor = [UIColor redColor];
     [self.view addSubview:l];
+    
+    
+    
+    UIButton *btn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    btn.frame = CGRectMake(90, 190, 40, 20);
+    btn.backgroundColor = [UIColor yellowColor];
+    [btn addTarget:self action:@selector(jumpToThird:) forControlEvents:(UIControlEventTouchUpInside)];
+    [self.view addSubview:btn];
+}
+
+- (void)jumpToThird:(id)sender{
+    ThirdVC *vc = [ThirdVC new];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    RuntimeVC *vc = [RuntimeVC new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

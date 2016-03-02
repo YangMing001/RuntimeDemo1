@@ -16,6 +16,10 @@
 		9956EFAB1C85350B0048D87C /* RuntimeDemo1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9956EFAA1C85350B0048D87C /* RuntimeDemo1Tests.m */; };
 		9956EFB61C85350B0048D87C /* RuntimeDemo1UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9956EFB51C85350B0048D87C /* RuntimeDemo1UITests.m */; };
 		9956EFC51C8535930048D87C /* UILabel+UILableFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 9956EFC41C8535930048D87C /* UILabel+UILableFont.m */; };
+		9956EFC81C858DA40048D87C /* RuntimeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9956EFC71C858DA40048D87C /* RuntimeVC.m */; };
+		9956EFCB1C8593130048D87C /* UILabel+runtimeAssociated.m in Sources */ = {isa = PBXBuildFile; fileRef = 9956EFCA1C8593130048D87C /* UILabel+runtimeAssociated.m */; };
+		99E9762B1C868C0900703720 /* GirlModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E9762A1C868C0900703720 /* GirlModel.m */; };
+		99E9762E1C868CB800703720 /* ThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E9762D1C868CB800703720 /* ThirdVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,14 @@
 		9956EFB71C85350B0048D87C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9956EFC31C8535930048D87C /* UILabel+UILableFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+UILableFont.h"; sourceTree = "<group>"; };
 		9956EFC41C8535930048D87C /* UILabel+UILableFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+UILableFont.m"; sourceTree = "<group>"; };
+		9956EFC61C858DA40048D87C /* RuntimeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeVC.h; sourceTree = "<group>"; };
+		9956EFC71C858DA40048D87C /* RuntimeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeVC.m; sourceTree = "<group>"; };
+		9956EFC91C8593130048D87C /* UILabel+runtimeAssociated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+runtimeAssociated.h"; sourceTree = "<group>"; };
+		9956EFCA1C8593130048D87C /* UILabel+runtimeAssociated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+runtimeAssociated.m"; sourceTree = "<group>"; };
+		99E976291C868C0900703720 /* GirlModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GirlModel.h; sourceTree = "<group>"; };
+		99E9762A1C868C0900703720 /* GirlModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GirlModel.m; sourceTree = "<group>"; };
+		99E9762C1C868CB800703720 /* ThirdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdVC.h; sourceTree = "<group>"; };
+		99E9762D1C868CB800703720 /* ThirdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +96,8 @@
 		9956EF841C85350B0048D87C = {
 			isa = PBXGroup;
 			children = (
+				9956EFC91C8593130048D87C /* UILabel+runtimeAssociated.h */,
+				9956EFCA1C8593130048D87C /* UILabel+runtimeAssociated.m */,
 				9956EF8F1C85350B0048D87C /* RuntimeDemo1 */,
 				9956EFA91C85350B0048D87C /* RuntimeDemo1Tests */,
 				9956EFB41C85350B0048D87C /* RuntimeDemo1UITests */,
@@ -115,6 +129,12 @@
 				9956EF901C85350B0048D87C /* Supporting Files */,
 				9956EFC31C8535930048D87C /* UILabel+UILableFont.h */,
 				9956EFC41C8535930048D87C /* UILabel+UILableFont.m */,
+				9956EFC61C858DA40048D87C /* RuntimeVC.h */,
+				9956EFC71C858DA40048D87C /* RuntimeVC.m */,
+				99E976291C868C0900703720 /* GirlModel.h */,
+				99E9762A1C868C0900703720 /* GirlModel.m */,
+				99E9762C1C868CB800703720 /* ThirdVC.h */,
+				99E9762D1C868CB800703720 /* ThirdVC.m */,
 			);
 			path = RuntimeDemo1;
 			sourceTree = "<group>";
@@ -275,10 +295,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99E9762E1C868CB800703720 /* ThirdVC.m in Sources */,
+				9956EFC81C858DA40048D87C /* RuntimeVC.m in Sources */,
 				9956EF981C85350B0048D87C /* ViewController.m in Sources */,
 				9956EF951C85350B0048D87C /* AppDelegate.m in Sources */,
 				9956EFC51C8535930048D87C /* UILabel+UILableFont.m in Sources */,
+				99E9762B1C868C0900703720 /* GirlModel.m in Sources */,
 				9956EF921C85350B0048D87C /* main.m in Sources */,
+				9956EFCB1C8593130048D87C /* UILabel+runtimeAssociated.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +528,7 @@
 				9956EFBC1C85350B0048D87C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9956EFBD1C85350B0048D87C /* Build configuration list for PBXNativeTarget "RuntimeDemo1Tests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +537,7 @@
 				9956EFBF1C85350B0048D87C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9956EFC01C85350B0048D87C /* Build configuration list for PBXNativeTarget "RuntimeDemo1UITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +546,7 @@
 				9956EFC21C85350B0048D87C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
